@@ -13,7 +13,7 @@ const TableRow = ({ data }) => {
           <div className={styles.TableRow_inner_data_item}>{data.client}</div>
           <div className={styles.TableRow_inner_data_item}>{data.issued}</div>
           <div className={styles.TableRow_inner_data_item}>{data.due}</div>
-          <div className={styles.TableRow_inner_data_item}>{data.amount}</div>
+          <div className={styles.TableRow_inner_data_item}>${data.amount}</div>
           <div className={styles.TableRow_inner_data_item}>
             <div className={styles.TableRow_inner_item_status}>
               {data.status}

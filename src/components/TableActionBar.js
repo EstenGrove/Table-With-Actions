@@ -4,10 +4,12 @@ import sprite from "../assets/tables.svg";
 import { download, fetchADLs, base } from "../utils/endpoints";
 import { useFetch } from "../utils/useFetch";
 import { useClipboard } from "../utils/useClipboard";
+import TableSettingsMenu from "./TableSettingsMenu";
 
 const TableActionBar = ({ activeUser, tableData }) => {
   const [activeAction, setActiveAction] = useState(null);
   const [openActions, toggleOpenActions] = useState(false);
+  const [openSettings, setOpenSettings] = useState(false);
   const { data, makeRequest } = useFetch();
   const { copied, copyToClipboard } = useClipboard();
 
@@ -52,67 +54,78 @@ const TableActionBar = ({ activeUser, tableData }) => {
     }
   }
 
+  function handleSettings() {
+    return setOpenSettings(true);
+  }
   return (
-    <div className={styles.TableActionBar}>
-      <div
-        className={
-          openActions
-            ? `${styles.TableActionBar_inner} ${styles.openActionBar}`
-            : styles.TableActionBar_inner
-        }
-      >
-        <svg
-          className={styles.TableActionBar_inner_icon}
-          onClick={handleActions}
+    <>
+      <div className={styles.TableActionBar}>
+        <div
+          className={
+            openActions
+              ? `${styles.TableActionBar_inner} ${styles.openActionBar}`
+              : styles.TableActionBar_inner
+          }
         >
-          <use xlinkHref={`${sprite}#icon-chevron-with-circle-down`} />
-        </svg>
-        <svg className={styles.TableActionBar_inner_icon}>
-          <use xlinkHref={`${sprite}#icon-cw`} />
-        </svg>
-        <svg className={styles.TableActionBar_inner_icon}>
-          <use xlinkHref={`${sprite}#icon-clipboard1`} />
-        </svg>
+          <svg
+            className={styles.TableActionBar_inner_icon}
+            onClick={handleActions}
+          >
+            <use xlinkHref={`${sprite}#icon-chevron-with-circle-down`} />
+          </svg>
+          <svg className={styles.TableActionBar_inner_icon}>
+            <use xlinkHref={`${sprite}#icon-cw`} />
+          </svg>
+          <svg className={styles.TableActionBar_inner_icon}>
+            <use xlinkHref={`${sprite}#icon-clipboard1`} />
+          </svg>
 
-        <svg
-          className={styles.TableActionBar_inner_icon}
-          onClick={() => tableActionsReducer("SAVE")}
+          <svg
+            className={styles.TableActionBar_inner_icon}
+            onClick={() => tableActionsReducer("SAVE")}
+          >
+            <use xlinkHref={`${sprite}#icon-save`} />
+          </svg>
+          <svg
+            className={styles.TableActionBar_inner_icon}
+            onClick={handlePrint}
+          >
+            <use xlinkHref={`${sprite}#icon-print`} />
+          </svg>
+          <svg className={styles.TableActionBar_inner_icon}>
+            <use xlinkHref={`${sprite}#icon-cog`} />
+          </svg>
+          <svg
+            className={styles.TableActionBar_inner_icon}
+            onClick={handleSettings}
+          >
+            <use xlinkHref={`${sprite}#icon-dots-three-horizontal`} />
+          </svg>
+        </div>
+        <div
+          className={
+            openActions
+              ? `${styles.TableActionBar_search} ${styles.showHidden}`
+              : styles.TableActionBar_search
+          }
         >
-          <use xlinkHref={`${sprite}#icon-save`} />
-        </svg>
-        <svg className={styles.TableActionBar_inner_icon} onClick={handlePrint}>
-          <use xlinkHref={`${sprite}#icon-print`} />
-        </svg>
-        <svg className={styles.TableActionBar_inner_icon}>
-          <use xlinkHref={`${sprite}#icon-cog`} />
-        </svg>
-        <svg className={styles.TableActionBar_inner_icon}>
-          <use xlinkHref={`${sprite}#icon-dots-three-horizontal`} />
-        </svg>
+          <input
+            type="text"
+            name="filter_table"
+            id="filter_table"
+            className={styles.TableActionBar_search_hidden}
+            placeholder="Filter..."
+          />
+          <svg
+            className={styles.TableActionBar_search_hidden_icon}
+            role="button"
+            tabIndex={0}
+          >
+            <use xlinkHref={`${sprite}#icon-magnifying-glass`} />
+          </svg>
+        </div>
       </div>
-      <div
-        className={
-          openActions
-            ? `${styles.TableActionBar_search} ${styles.showHidden}`
-            : styles.TableActionBar_search
-        }
-      >
-        <input
-          type="text"
-          name="filter_table"
-          id="filter_table"
-          className={styles.TableActionBar_search_hidden}
-          placeholder="Filter..."
-        />
-        <svg
-          className={styles.TableActionBar_search_hidden_icon}
-          role="button"
-          tabIndex={0}
-        >
-          <use xlinkHref={`${sprite}#icon-magnifying-glass`} />
-        </svg>
-      </div>
-    </div>
+    </>
   );
 };
 export default TableActionBar;

@@ -1,9 +1,15 @@
 import React from "react";
 import styles from "../css/TableSettingsMenu.module.scss";
 
-const TableSettingsMenu = props => {
+const TableSettingsMenu = ({ openSettings }) => {
   return (
-    <nav className={styles.TableSettingsMenu}>
+    <nav
+      className={
+        openSettings
+          ? `${styles.TableSettingsMenu} ${styles.openSettings}`
+          : styles.TableSettingsMenu
+      }
+    >
       <div className={styles.TableSettingsMenu_inner}>
         <div className={styles.TableSettingsMenu_inner_item}>
           <input
