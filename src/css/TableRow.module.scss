@@ -1,0 +1,56 @@
+@import "../sass/mixins";
+@import "../sass/variables";
+
+.TableRow {
+  width: 100%;
+  height: 6rem;
+
+  &_inner {
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+    @include row_between_center;
+
+    &_selection {
+      width: 20%;
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    &_data {
+      width: 120%;
+      height: 100%;
+      font-size: 1.4rem;
+      color: map-get($map: $blueGreys, $key: "darkest");
+      @include row_between_center;
+    }
+    &_data_item {
+      width: 100%;
+
+      &:nth-child(2) {
+        width: 120%;
+      }
+      &:nth-child(3) {
+        width: 140%;
+      }
+      &:nth-child(4) {
+        width: 80%;
+      }
+      &:nth-child(5) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.TableRow:nth-child(even) {
+  background-color: map-get($map: $blueGreys, $key: "light");
+}

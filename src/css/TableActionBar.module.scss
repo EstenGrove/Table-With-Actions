@@ -1,0 +1,108 @@
+@import '../sass/mixins';
+@import '../sass/variables';
+
+.TableActionBar {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+
+  &_inner {
+    width: 100%;
+    height: 5rem;
+    padding: .5rem 1rem;
+    transition: all .3s ease-in-out;
+    @include row_between_center;
+
+    &_save {
+      fill: map-get($map: $greys, $key: 'medium');
+    }
+
+    &_icon {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 1rem;
+      color: map-get($map: $greys, $key: 'medium');
+      fill: map-get($map: $blueGreys, $key: 'saturated');
+      cursor: pointer;
+
+      &:hover {
+        fill: map-get($map: $greys, $key: 'medium');
+      }
+
+      &:nth-child(1){
+        fill: map-get($map: $greys, $key: 'medium');
+      }
+      &:nth-child(2){
+        fill: map-get($map: $greys, $key: 'medium');
+      }
+      &:nth-child(5) {
+        margin-right: auto;
+      }
+      &:nth-child(6) {
+        fill: map-get($map: $greys, $key: 'medium');
+      }
+      &:nth-child(7) {
+        fill: map-get($map: $greys, $key: 'medium');
+      }
+    }
+  }
+  
+  &_search {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+
+    &_hidden {
+      width: 20rem;
+      height: 2.5rem;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      padding-left: .5rem;
+      border-radius: .5rem 0 0 .5rem;
+      border: 1px solid map-get($map: $blueGreys, $key: 'saturated');
+      border-right: none;
+      outline: none;
+      font-family: $primary_font;
+  
+      &_icon {
+        display: block;
+        position: absolute;
+        top: -.7rem;
+        left: 20rem;
+        width: 2rem;
+        height: 2.5rem;
+        fill: map-get($map: $blueGreys, $key: 'darkest');;
+        background-color: map-get($map: $blueGreys, $key: 'cloudy');
+        border: 1px solid map-get($map: $blueGreys, $key: 'saturated');
+        border-radius: 0 .5rem .5rem 0;
+        outline: none;
+        transition: all .2s ease-in;
+
+        &:hover {
+          cursor: pointer;
+          background-color: map-get($map: $colors, $key: 'main');
+          fill: map-get($map: $blueGreys, $key: 'light');
+        }
+
+        &:focus-within {
+          background-color: map-get($map: $colors, $key: 'main');
+          fill: map-get($map: $blueGreys, $key: 'light');
+        }
+      }
+     
+    }
+  }
+
+  
+}
+
+.openActionBar {
+  height: 5rem;
+  transition: all .3s ease-in-out;
+}
+
+.showHidden {
+  display: initial;
+}

@@ -1,0 +1,45 @@
+@import "../sass/mixins";
+@import "../sass/variables";
+
+.Table {
+  position: relative;
+  max-width: 100vw;
+  height: auto;
+  border-radius: 1rem;
+  -webkit-box-shadow: map-get($map: $shadows, $key: "medium");
+  box-shadow: map-get($map: $shadows, $key: "medium");
+  margin-bottom: 3rem;
+
+  &_headings {
+    height: 7rem;
+    @include row_evenly_center;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0;
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: 1px solid #ccc;
+    background-color: map-get($map: $blueGreys, $key: "light");
+
+    &_selector {
+      padding-top: 1.8rem;
+      margin-left: 2rem;
+      margin-right: 1rem;
+      height: 100%;
+      @include row_center_all;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: map-get($map: $blueGreys, $key: "darkest");
+
+      &_item {
+        padding-top: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .Table {
+    max-width: 100vw;
+    overflow-x: auto;
+  }
+}

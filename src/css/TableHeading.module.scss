@@ -1,0 +1,86 @@
+@import "../sass/mixins";
+@import "../sass/variables";
+
+.TableHeading {
+  width: 100%;
+  height: 100%;
+
+  &_inner {
+    width: auto;
+    height: 100%;
+    padding: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: map-get($map: $blueGreys, $key: "darkest");
+    @include row_center_all;
+
+    &_icons {
+      height: 3rem;
+      @include col_center_all;
+    }
+
+    &_chevron {
+      width: 2rem;
+      height: 2rem;
+      fill: map-get($map: $blueGreys, $key: "saturated");
+
+      &:hover {
+        fill: map-get($map: $blueGreys, $key: "darkest");
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.rotate_180 {
+  -webkit-animation: rotate_180 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: rotate_180 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes rotate_180 {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+@keyframes rotate_180 {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+.rotate_180_ccw {
+  -webkit-animation: rotate_180_ccw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: rotate_180_ccw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes rotate_180_ccw {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+}
+@keyframes rotate_180_ccw {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+}
