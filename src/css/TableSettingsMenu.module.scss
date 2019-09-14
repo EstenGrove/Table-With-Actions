@@ -4,13 +4,17 @@
 .TableSettingsMenu {
   display: block;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 90vw;
-  height: 60rem;
-  padding: 2rem 4rem;
-  margin-top: -30rem;
-  margin-left: -45vw;
+  top: 0;
+  left: 0;
+  width: 45rem;
+  height: 30rem;
+  padding: 2rem 1.5rem;
+
+  background-color: map-get($map: $blueGreys, $key: 'lightest');
+  -webkit-box-shadow: map-get($map: $shadows, $key: 'heavy');
+  box-shadow: map-get($map: $shadows, $key: 'heavy');
+  border-radius: 1rem;
+  z-index: 10;
 
   &_inner {
     display: grid;
@@ -25,13 +29,15 @@
       width: 100%;
       height: 100%;
     }
+
     &_item_input {
       width: 100%;
       height: 3.5rem;
       padding-left: 0.5rem;
       border-radius: 0.5rem;
-      border: none;
+      border: 1px solid map-get($map: $colors, $key: 'main');
       outline: none;
+      font-size: 1.8rem;
     }
   }
 }

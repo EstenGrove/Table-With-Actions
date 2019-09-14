@@ -33,15 +33,19 @@
       &:nth-child(1) {
         fill: map-get($map: $greys, $key: "medium");
       }
+
       &:nth-child(2) {
         fill: map-get($map: $greys, $key: "medium");
       }
+
       &:nth-child(5) {
         margin-right: auto;
       }
+
       &:nth-child(6) {
         fill: map-get($map: $greys, $key: "medium");
       }
+
       &:nth-child(7) {
         fill: map-get($map: $greys, $key: "medium");
       }
@@ -69,7 +73,7 @@
       &_icon {
         display: block;
         position: absolute;
-        top: -0.7rem;
+        top: -0.6rem;
         left: 20rem;
         width: 2rem;
         height: 2.5rem;

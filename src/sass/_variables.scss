@@ -16,7 +16,7 @@ $deepPurple: hsla(240, 68%, 62%, 1);
 $orange: hsla(11, 100%, 75%, 1);
 $yellow: hsla(60, 92%, 71%, 1);
 $grey: hsla(216, 14%, 93%, 1);
-$altYellow: hsla(39, 100% ,70%, 1);
+$altYellow: hsla(39, 100%, 70%, 1);
 
 // FLAT VERSIONS
 $flatBlue: hsla(197, 100%, 50%, .3);
@@ -34,16 +34,14 @@ $medium_shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
 $heavy_shadow: 3px 4px 16px -1px rgba(0, 0, 0, 0.75);
 
 
-$greys: (
-    dark: hsla(0, 0%, 13%, 1),
+$greys: (dark: hsla(0, 0%, 13%, 1),
     medium: hsla(0, 0%, 29%, 1),
     light: hsla(0, 0%, 45%, 1),
 );
 
-$blueGreys: (
-    lightest: hsla(204, 46%, 98%, 1),
-    light: hsla(214, 32%,  91%, 1),
-    cloudy: hsla(211, 25%,  84%, 1),
+$blueGreys: (lightest: hsla(204, 46%, 98%, 1),
+    light: hsla(214, 32%, 91%, 1),
+    cloudy: hsla(211, 25%, 84%, 1),
     saturated: hsla(218, 17%, 65%, 1),
     dark: hsla(216, 15%, 52%, 1),
     darkest: hsla(218, 17%, 35%, 1),
@@ -62,8 +60,7 @@ $colors: (main: $vibe,
     altYellow: $altYellow,
 );
 
-$flatColors: (
-    main: $flatAltPurple,
+$flatColors: (main: $flatAltPurple,
     mainBlue: $flatBlue,
     mainRed: $flatRed,
     mainGreen: $flatGreen,

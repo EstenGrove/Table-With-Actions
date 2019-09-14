@@ -2,7 +2,6 @@
 @import "../sass/variables";
 
 .Table {
-  position: relative;
   max-width: 100vw;
   height: auto;
   border-radius: 1rem;
@@ -34,6 +33,10 @@
         padding-top: 1rem;
       }
     }
+  }
+
+  &_rows {
+    position: relative;
   }
 }
 

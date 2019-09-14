@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "../css/TableHeading.module.scss";
+import sprite from "../assets/tables.svg";
 
 const TableHeading = ({ heading, callback = null }) => {
   const [rotated, setRotated] = useState(null);
@@ -24,7 +25,7 @@ const TableHeading = ({ heading, callback = null }) => {
           }
           onClick={changeSorting}
         >
-          <use xlinkHref={`/tables.svg/#icon-chevron-small-down`} />
+          <use xlinkHref={`${sprite}#icon-chevron-small-down`} />
         </svg>
       </div>
     </div>
